@@ -1,5 +1,6 @@
 # Namekuji
 
+[![Gem Version](https://badge.fury.io/rb/namekuji.svg)](https://badge.fury.io/rb/namekuji)
 [![Build Status](https://travis-ci.org/thetallgrassnet/namekuji.svg?branch=master)](https://travis-ci.org/thetallgrassnet/namekuji)
 [![Dependency Status](https://gemnasium.com/thetallgrassnet/namekuji.svg)](https://gemnasium.com/thetallgrassnet/namekuji)
 [![Code Climate](https://codeclimate.com/github/thetallgrassnet/namekuji/badges/gpa.svg)](https://codeclimate.com/github/thetallgrassnet/namekuji)
