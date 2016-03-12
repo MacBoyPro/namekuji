@@ -1,5 +1,8 @@
 module Namekuji
   module ClassMethods
+    # Takes the field name passed in the `:on_field` option (or the output of
+    # the model's `to_s` method), parameterizes it, and saves it in the field
+    # name passed in the `:slug_field` option (or the `slug` field).
     def sluggable(options = {})
       cattr_accessor :sluggable_field, :slug_field
       self.sluggable_field = (options[:on_field] || :to_s).to_s
