@@ -7,7 +7,7 @@ module Namekuji
     protected
 
     def slugify
-      send("#{self.class.slug_field}=", send(self.class.sluggable_field).parameterize)
+      send("#{self.class.slug_field}=", send(self.class.sluggable_field).tr("'", "").parameterize)
     end
   end
 end

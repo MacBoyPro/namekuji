@@ -31,4 +31,14 @@ class Namekuji::SluggableTest < ActiveSupport::TestCase
     assert_equal sluggable_on_field_slug_field.parameterized, slug
     assert_equal sluggable_on_field_slug_field.to_param, slug
   end
+
+  test "sluggable removes apostrophes" do
+    name = "We Don't Want Extra Dashes"
+    slug = "we-dont-want-extra-dashes"
+
+    sluggable_removes_apostrophes = TestModelSluggable.create name: name
+
+    assert_equal sluggable_removes_apostrophes.slug, slug
+    assert_equal sluggable_removes_apostrophes.to_param, slug
+  end
 end
