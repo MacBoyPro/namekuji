@@ -21,3 +21,18 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActionDispatch::IntegrationTest.fixture_path = ActiveSupport::TestCase.fixture_path
   ActiveSupport::TestCase.fixtures :all
 end
+
+# DatabaseCleaner
+require 'database_cleaner'
+
+DatabaseCleaner[:active_record].strategy = :transaction
+
+class MiniTest::Test
+  def setup
+    DatabaseCleaner.start
+  end
+
+  def teardown
+    DatabaseCleaner.clean
+  end
+end
