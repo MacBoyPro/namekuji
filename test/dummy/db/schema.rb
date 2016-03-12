@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312035822) do
+ActiveRecord::Schema.define(version: 20160312040357) do
 
   create_table "test_model_sluggable_on_field_slug_fields", force: :cascade do |t|
     t.string   "name"
@@ -24,17 +24,21 @@ ActiveRecord::Schema.define(version: 20160312035822) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
 
   create_table "test_model_sluggable_slug_fields", force: :cascade do |t|
     t.string   "parameterized"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "name"
   end
 
   create_table "test_model_sluggables", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "slug"
   end
 
 end
