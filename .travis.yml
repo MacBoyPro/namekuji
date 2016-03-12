@@ -1,11 +1,16 @@
 sudo: false
-
 language: ruby
-
 rvm:
 - 2.3.0
-
 before_script:
 - cd test/dummy
 - bin/rake db:migrate RAILS_ENV=test
 - cd ..
+deploy:
+  provider: rubygems
+  api_key:
+    secure: H1np73C0gs8HBzva8bI5JJ19mXC5JB/IMr2Ls2fEJa9t4EWaIplI2wcRmMgZb451w4b9J/5IjRTbvVINWbxYeInq8gEdB2ezDMh2Amm0R6f1Q3RYSF8aHoKSfe72RLWnPbnOeADXHlupMJocM7NH3cYuDmLRz6a0TtpZkAESGf2RAy8PcogkskuQ3mGjpnWaq6cwHRZzPi6vQsqY/3hj9yJrDpy20oTTXE/D63QNrvzigODpAuWqDl14J9TlO7XdQONHtVKDbfPPRUti8EJvGl9m0XVfIQDEye3wIajhso9Xd8wxaGSVJun1yB+toovGOZo7CV3/FMMtEbH6nyJ1gW88/p5fVfwixZnv33imUPHy/YWKApGr4RoYOz8/NxD2aEYAg4Onfj/tgQr0a7ANheFKMDHkd0n6B9FouDSBB50gH32JnqmPzWZvS1XO8KZVnokXWD/xlQUzu5gmedbUQ/+QA4S1CrSKwcjmxmidy2zyMUwCRQJmXi+cU4uoupHkS2K+/XNH6DrKUZaRLUIWWDx+Z3l5Bt1B0rg0+CiBod2O+oQH3daXYPOEwLZkWbECbc35uSAEOSKnQhlY26VBB87Mw6Qx1BIJHg5HVVgTbnItVvQMI+hpo9iRpgqjznreCuM4UcyTPNoOUCZ1Igvl6IPm1Pn04pDssr6D+8AngyE=
+  gem: namekuji
+  on:
+    tags: true
+    repo: thetallgrassnet/namekuji
