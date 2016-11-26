@@ -8,7 +8,7 @@ module Namekuji
       self.sluggable_field = (options[:on_field] || :to_s).to_s
       self.slug_field = (options[:slug_field] || :slug).to_s
 
-      before_validation :slugify
+      before_validation :slugify, :unless => Proc.new { |model| model.send(slug_field.to_sym).nil? }
 
       validates self.slug_field.to_sym, allow_blank: false, allow_nil: true, uniqueness: true, format: {
         with: %r{\A[0-9a-z-]+\Z},
