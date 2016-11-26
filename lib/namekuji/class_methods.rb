@@ -10,7 +10,7 @@ module Namekuji
 
       before_validation :slugify
 
-      validates self.slug_field.to_sym, presence: true, uniqueness: true, format: {
+      validates self.slug_field.to_sym, allow_blank: false, allow_nil: true, uniqueness: true, format: {
         with: %r{\A[0-9a-z-]+\Z},
         message: "may only contain lowercase letters (a-z), numbers (0-9), and dashes (-)"
       }
